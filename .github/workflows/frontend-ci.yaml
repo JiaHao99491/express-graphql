@@ -23,5 +23,11 @@ jobs:
       - name: Running lints
         run: pnpm lint
 
+      - name: Running prettier
+        run: pnpm format
+
+      - name: Running tests
+        run: pnpm test
+
       - name: Building project
         run: pnpm build
