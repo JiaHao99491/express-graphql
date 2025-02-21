@@ -1,0 +1,24 @@
+name: Build and deploy frontend
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    name: Tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./client
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Running lints
+        run: pnpm lint
+
+      - name: Building project
+        run: pnpm build
