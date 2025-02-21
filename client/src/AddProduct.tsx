@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Category, Product } from "./types";
-import { useMutation } from "@apollo/client";
-import { ADD_PRODUCT, GETPRODUCTS } from "./query";
+import React, { useState } from 'react';
+import { Category, Product } from './types';
+import { useMutation } from '@apollo/client';
+import { ADD_PRODUCT, GETPRODUCTS } from './query';
 
 interface Props {
   categories: Array<Category>;
@@ -9,22 +9,24 @@ interface Props {
 
 export const AddProduct = (props: Props) => {
   const [product, setProduct] = useState<Product>({
-    name: "",
-    categoryId: "",
+    name: '',
+    categoryId: '',
   });
   const [category, setCategories] = useState<Category>({
-    id: "",
-    name: "",
-    products: []
-  })
+    id: '',
+    name: '',
+    products: [],
+  });
   const [addProduct] = useMutation(ADD_PRODUCT);
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     addProduct({
       variables: product,
-      refetchQueries: [{
-        query: GETPRODUCTS
-      }]
+      refetchQueries: [
+        {
+          query: GETPRODUCTS,
+        },
+      ],
     });
   }
   return (
@@ -44,23 +46,23 @@ export const AddProduct = (props: Props) => {
         <label>产品分类</label>
         <select
           value={category.id}
-          onChange={(event) =>
-           {
+          onChange={(event) => {
             setCategories({
               ...props.categories,
-              id: event.target.value
-            })
-            setProduct({ ...product, categoryId: event.target.value })
-           }
-          }
+              id: event.target.value,
+            });
+            setProduct({ ...product, categoryId: event.target.value });
+          }}
           className="form-control"
         >
           <option value="">选择分类</option>
-          {
-            props.categories.map((item:Category) => {
-                return <option value={item.id}>{item.name}</option>
-            })
-          }
+          {props.categories.map((item: Category) => {
+            return (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
+            );
+          })}
         </select>
       </div>
       <div className="form-group">

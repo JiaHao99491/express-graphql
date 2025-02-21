@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`快照测试 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-md-6"
+      >
+        <div
+          class="panel panel-default"
+        >
+          <div
+            class="panel-heading"
+          >
+            <form>
+              <div
+                class="form-group"
+              >
+                <label>
+                  产品名称
+                </label>
+                <input
+                  class="form-control"
+                  type="text"
+                  value=""
+                />
+              </div>
+              <div
+                class="form-group"
+              >
+                <label>
+                  产品分类
+                </label>
+                <select
+                  class="form-control"
+                >
+                  <option
+                    value=""
+                  >
+                    选择分类
+                  </option>
+                  <option
+                    value="67b83f9a33972669986ca3d4"
+                  >
+                    图书
+                  </option>
+                </select>
+              </div>
+              <div
+                class="form-group"
+              >
+                <input
+                  class="btn btn-primary"
+                  type="submit"
+                />
+              </div>
+            </form>
+          </div>
+          <div
+            class="panel-body"
+          >
+            <table
+              class="table table-striped"
+            >
+              <caption
+                class="text-center"
+              >
+                产品列表
+              </caption>
+              <thead>
+                <tr>
+                  <td>
+                    名称
+                  </td>
+                  <td>
+                    分类
+                  </td>
+                </tr>
+              </thead>
+              <tbody />
+            </table>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6"
+      >
+        <div
+          class="panel panel-default"
+        >
+          <div
+            class="panel-body"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,4 +1,4 @@
-import { Product } from "./types";
+import { Product } from './types';
 
 interface Props {
   product: Product | null | undefined;
@@ -6,7 +6,7 @@ interface Props {
 
 export const ProductDetail = (props: Props) => {
   const product = props.product;
-  if(!product)return null
+  if (!product) return null;
   return (
     <ul className="list-group">
       <li className="list-group-item">ID:{product.id}</li>
@@ -16,9 +16,7 @@ export const ProductDetail = (props: Props) => {
         此分类下面的所有产品
         <ul className="list-group">
           {product.category?.products?.map((item: Product) => {
-            return (
-              <li className="list-group-item">{item.name}</li>
-            );
+            return <li className="list-group-item">{item.name}</li>;
           })}
         </ul>
       </li>
